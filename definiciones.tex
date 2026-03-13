@@ -1,0 +1,194 @@
+% Packages
+\usepackage{color,graphicx}
+\usepackage[spanish,activeacute]{babel}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{pgf,tikz}
+\usetikzlibrary{arrows,positioning,calc,intersections,petri}
+\usetikzlibrary{lindenmayersystems,decorations}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{bm}
+\usepackage{centernot}
+\usepackage{nicematrix,tikz}
+\usepackage{epsfig,mathrsfs}
+\usepackage{amsfonts,xspace,colortbl,enumerate}
+\usepackage[utf8]{inputenc}
+
+% itemize
+\usepackage{enumitem}
+\setlist{nolistsep}
+
+% Dimensions
+\setlength{\oddsidemargin}{0cm}
+\setlength{\evensidemargin}{0cm} 
+\setlength{\textwidth}{17cm}
+\setlength{\textheight}{23cm} 
+\setlength{\topmargin}{-1cm}
+
+\addtolength{\voffset}{0cm}
+
+\parindent= 0cm
+\parskip=1em
+
+\font\bff=cmbx10 at 10truept
+\font\lg=cmdunh10 at 10truept
+\font\bl=cmss10 at 10truept
+
+\linespread{1.1}
+% ----------------------------------------------------------------
+\vfuzz2pt % Don't report over-full v-boxes if over-edge is small
+\hfuzz2pt % Don't report over-full h-boxes if over-edge is small
+
+% useful for formulas
+% Conjuntos de numeros
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\K}{\mathbb{K}}
+% En demostraciones
+\newcommand{\gdw}{\Leftrightarrow}
+\newcommand{\dw}{\Rightarrow}
+% Functions
+\newcommand{\To}{\longrightarrow}
+% derivative
+\newcommand{\de}{\mbox{d}}
+% distance
+\newcommand{\dist}{\mbox{d}}
+% linear operators
+\newcommand{\linop}{{\mathcal L}}
+% image space of a matrix
+\newcommand{\myim}{\mbox{im}\,}
+\newcommand{\ssi}{si y solo si }
+\newcommand\sbullet[1][.5]{\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}}
+
+% theorem, lemma, example, corollary, proposition, ...
+\theoremstyle{definition}
+\newtheorem{thm}{Teorema}[chapter]
+\theoremstyle{definition}
+\newtheorem{cor}{Corolario}[thm]
+\theoremstyle{definition}
+\newtheorem{lem}[thm]{Lema}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definici\'on}
+\newtheorem{prop}[thm]{Proposici\'on}
+
+
+\theoremstyle{plain}
+\newtheorem{ejemplo}[thm]{Ejemplo}
+\theoremstyle{plain}
+\newtheorem{ejercicio}[thm]{Ejercicio}
+\theoremstyle{plain}
+\newtheorem{rem}[thm]{Observaci\'on}
+
+\newenvironment{prueba}{\begin{proof}[\textbf{Demostraci\'on}]}{\end{proof}}
+
+\numberwithin{equation}{chapter}
+
+\definecolor{reddish}{rgb}{.8,.15,.2}
+
+%--------------------------------------------
+% Recuadros para lemas, teoremas,
+% observaciones y definiciones
+\usepackage{caption}
+\usepackage{parskip}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+
+
+% Colores A. Hopper
+% verde: blue!35!black (definiciones)
+% rojo: red!90!black (observaciones)
+% azul: (ejemplos)
+
+\definecolor{dgreen}{rgb}{0.0,0.6,0.0}
+\definecolor{turco}{rgb}{0,.5,.5}
+\definecolor{reddish}{rgb}{.8,.1,.1}
+\definecolor{magic}{cmyk}{0,.5,0,.5}
+\definecolor{blueish}{rgb}{.1,.1,.8}
+\definecolor{greenish}{rgb}{.1,.8,.1}
+\definecolor{antiquefuchsia}{rgb}{0.57, 0.36, 0.51}%
+\definecolor{amaranth}{rgb}{0.9, 0.17, 0.31}
+\definecolor{awesome}{rgb}{1.0, 0.13, 0.32}
+\definecolor{cadmiumgreen}{rgb}{0.0, 0.42, 0.24}
+\definecolor{brightmaroon}{rgb}{0.76, 0.13, 0.28}
+\definecolor{cadmiumred}{rgb}{0.89, 0.0, 0.13}
+\definecolor{carminered}{rgb}{1.0, 0.0, 0.22}
+\definecolor{cobalt}{rgb}{0.0, 0.28, 0.67}
+
+\newcommand{\az}[1]{\textcolor{blueish}{#1}}
+\newcommand{\ro}[1]{\textcolor{reddish}{#1}}
+\newcommand{\tu}[1]{\textcolor{turco}{#1}}
+\newcommand{\na}[1]{\textcolor{brightmaroon}{#1}}
+\newcommand{\aw}[1]{\textcolor{cobalt}{#1}}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+%\newtcbtheorem[number within=chapter]{defn}{Definici\'on}%
+%{fonttitle=\bfseries}{it}
+
+%\newtcbtheorem[use counter from = defn]{lem}{Lema}%
+%{fonttitle=\bfseries}{it}
+
+%\newtcbtheorem[use counter from = defn]{rem}{Observaci\'on}%
+%{fonttitle=\bfseries}{it}
+%
+%\newtcbtheorem[use counter from = defn]{ejemplo}{Ejemplo}%
+%{fonttitle=\bfseries}{it}
+%
+%\newtcbtheorem[use counter from = defn]{cor}{Corolario}%
+%{fonttitle=\bfseries}{it}
+%
+%\newtcbtheorem[use counter from = defn]{thm}{Teorema}%
+%{fonttitle=\bfseries}{it}
+
+
+
+%--------------------------------------------
+\hypersetup{ pdfborder = {0 0 0} }
+
+\hypersetup{pdfstartview={XYZ null null 1.17}}
+
+\voffset 0 cm
+
+%----------------------------------------------
+% Alternativa para tener listas en columnas con filas alineadas
+\usepackage{tasks}
+
+\usepackage{circuitikz}
+
+%\pagestyle{empty}
+\parindent=0cm
+\parskip=1em
+
+% Conjuntos de numeros
+\newcommand{\calL}{\mathcal{L}}
+\newcommand{\sen}{\mathup{sen}}
+% En demostraciones
+\newcommand{\un}{{\mathcal U}}
+% cardinal de un conjunto
+\def\card{\textup{card}}
+
+\newenvironment{solucion}[1]
+{\begin{proof}[{\bf Soluci\'on a ejercicio #1}]}{\end{proof}}
+% colores
+\definecolor{ffqqqq}{rgb}{1,0,0}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\definecolor{uququq}{rgb}{0.25,0.25,0.25}
+\definecolor{qqffqq}{rgb}{0,1,0}
+\definecolor{uuuuuu}{rgb}
+{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+
+\newtheorem*{pp}{Principio de Inducción}
+
+
+\pgfdeclaredecoration{quasi-sirpinski}{do}{%
+    \state{do}[width=\pgfdecoratedinputsegmentlength, next state=do]{%
+        \pgfpathmoveto{\pgfpointpolar{-60}{\pgfdecoratedinputsegmentlength/2}}%
+        \pgfpathlineto{\pgfpointorigin}%
+        \pgfpathlineto{\pgfpoint{\pgfdecoratedinputsegmentlength/2}{0pt}}%
+        \pgfpathclose%
+    }
+}
